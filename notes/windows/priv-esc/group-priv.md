@@ -18,7 +18,7 @@ wevtutil qe Security /rd:true /f:text | Select-String "/user"
 >[!WARN]
 > Need to get more info on this
 
-# DNSAdmins Group
+## DNSAdmins Group
 
 **Checks whether you are part of the group** 
 ```
