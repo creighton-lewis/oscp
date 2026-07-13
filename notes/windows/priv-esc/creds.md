@@ -56,5 +56,4 @@ C:\Users\htb-student\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8weky
 
 ## Misc 
 ##  Citrix Breakout
-
 [Citrix Breakout Information](https://docs.rtlcopymemory.com/privilege-escalation/windows-privilege-escalation/restricted-environments)
