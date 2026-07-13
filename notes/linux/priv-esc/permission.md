@@ -1,4 +1,5 @@
 # Permissions
+## Library Hijacking
 **Enumeration**
 ```shell
 #--finds SETUID binaries 
@@ -18,9 +19,9 @@ ldd /opt/binary/path
 ```
 
 **Indicators of vulnerabilities** 
-- non-standard library names 
-- libraries loaded from unusual paths 
-- missing libraries not found
+- Non-standard library names 
+- Libraries loaded from unusual paths 
+- Missing libraries not found
 ### Situations 
 #### RPATH Writable Directory 
 
@@ -65,15 +66,16 @@ gcc -shared -fPIC -nostartfiles -o /opt/app/lib/libapp.so.1 /tmp/hijack.c
 
 #### Missing Library 
 
-1. **Search libraries that are missing **
+1. **Search libraries that are missing**
 ```bash
 find / -perm -u=s -type f 2>/dev/null | while read f; do missing=$(ldd "$f" 2>/dev/null | grep "not found") [ -n "$missing" ] && echo "$f: $missing" done
 ```
-2. **Use GCC to compile missing library 
+2. **Use GCC to compile missing library**
 ```
 gcc -shared -fPIC -nostartfiles -o /tmp/libcustom.so.1 /tmp/hijack.c 
 
 ```
+3. **Run service that calls on the library**
 
 #### Library Overwrite 
 1. Find library with misconfiguration 
@@ -88,3 +90,25 @@ cp /usr/lib/libvulnerable.so.1 /tmp/libvulnerable.so.1.bak
 ```
 gcc -shared -fPIC -nostartfiles -o /usr/lib/libvulnerable.so.1 /tmp/hijack.c
 ```
+4. **Run the service that calls the library**
+
+## Python Library Hijacking 
+### Situation 1
+1. First, identify SUID permission
+```
+ls -lan file.py 
+```
+2. Enumerate  function and library permissions
+
+```
+grep -r "def {function_used}" /usr/local/lib/python/packages/{library/*
+```
+
+```
+ls -l /usr/local/lib/python3.8/dist-packages/{library}/__init__.py
+```
+3. Escalate privileges using sudo
+```
+sudo /usr/bin/python3 ./script.py
+```
+   
