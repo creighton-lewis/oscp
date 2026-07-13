@@ -40,13 +40,14 @@ grep -ir "BEGIN RSA PRIVATE KEY" /*
 grep -ir "BEGIN DSA PRIVATE KEY" /
 
 ```
-# 3. 
+# 3. More key enumeration
 ```
 find / -name "id_rsa" -o -name "id_ed25519" -o -name "*.pem" -o -name "*.key" 2>/dev/null
-```
-# Also: /etc/ssh/ssh_host_*_key (MITM), /home/*/.ssh/id_*
+*Also: /etc/ssh/ssh_host_*_key (MITM), /home/*/.ssh/id_*
 
-# Find keys without passphrase:
+```
+
+**Find keys without passphrase:**
 ```
 for key in $(find / -name "id_*" ! -name "*.pub" 2>/dev/null); do
     ssh-keygen -y -P "" -f "$key" > /dev/null 2>&1 && echo "NO PASSPHRASE: $key"
