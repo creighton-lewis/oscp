@@ -111,4 +111,13 @@ ls -l /usr/local/lib/python3.8/dist-packages/{library}/__init__.py
 ```
 sudo /usr/bin/python3 ./script.py
 ```
-   
+>[!NOTE]
+>1. Identify what libraries are currently being used for the script (done by looking at the top )
+>   
+>2. Use pip3 show {library-name} to get the path for it
+> 
+>3. Next, run python3 -c 'import sys; print("\n".join(sys.path))'. 
+>
+>4. Check to see if any directories are writable, and ensure that if there are, they have greater priority than the library name specified at the beginning 
+>
+>5. Use the directory that is writable to create a file that uses the same name as the library that was called in a script and add the following code to it 
