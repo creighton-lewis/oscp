@@ -79,7 +79,7 @@ SELECT SLEEP(5)
 SELECT * FROM table_name; *
 
 ```
-\
+
 ```mysql
 SELECT * FROM logins ORDER BY password;
 ```
@@ -90,7 +90,7 @@ SELECT * FROM logins ORDER BY password DESC, id ASC;
 ```
 
 
-**Limiting Results 
+**Limiting Results**
 
 ```
 SELECT * FROM logins LIMIT 2;
@@ -99,7 +99,7 @@ SELECT * FROM logins LIMIT 2;
 SELECT * FROM logins LIMIT 1, 2;
 ```
 
-**Where Results **
+**Where Results**
 
 ```
 SELECT * FROM table_name WHERE <condition>;
@@ -163,7 +163,7 @@ ports: table
 ships: another table 
 ```
 
-**Determining Column Number **
+**Determining Column Number**
 
 - ORDER BY 
 - UNION 
@@ -210,23 +210,12 @@ logic can be subverted by using various payloads like the following
 ```shell
 '
 
-```
-
-```shell
 ''
-```
 
-```shell
 #
 
-```
-
-```shell
 ;
 
-```
-
-```shell
 )
 
 ```
