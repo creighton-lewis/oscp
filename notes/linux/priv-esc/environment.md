@@ -124,11 +124,14 @@ ssh hackNos@<IP-Adress> -t "bash --noprofile"```
 [resource-1](https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits) 
 
 [resource-2](https://www.youtube.com/watch?v=718L9YuRUTY)
+
 **Setuid:** permission found in linux that allows a user to execute script or action with the permissions of a user
+
 ```bash
 find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
 ```
 **setgid:** Permission that lets us run binaries as if we were part of the group that created them. files can be enumerated using following command 
+
 ```bash
 find / -uid 0 -perm -6000 -type f 2>/dev/null
 ```
