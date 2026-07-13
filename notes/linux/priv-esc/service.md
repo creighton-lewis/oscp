@@ -110,3 +110,9 @@ curl https://10.129.10.11:6443 -k
 ```
 curl https://10.129.10.11:10250/pods -k | jq .
 ```
+### NFS 
+[Example](https://github.com/dollarboysushil/oscp-cpts-notes/blob/main/linux-privilege-escalation/exploiting-nfs-weak-permission.md)
+
+### Tmux 
+>[!NOTE]
+> ADD MORE INFORMATION HERE 
