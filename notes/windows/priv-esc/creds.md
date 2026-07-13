@@ -1,10 +1,10 @@
 # Credential Hunting 
-https://github.com/AlessandroZ/LaZagne
+[Lazagne](https://github.com/AlessandroZ/LaZagne)
 
-https://github.com/Arvanaghi/SessionGopher
+[SessionGopher](https://github.com/Arvanaghi/SessionGopher)
 
-https://github.com/SnaffCon/Snaffler
+[Snaffler.exe](https://github.com/SnaffCon/Snaffler)
 
-https://github.com/GhostPack/SharpDPAPI
+[SharpDPAPI](https://github.com/GhostPack/SharpDPAPI)
 
-https://deepwiki.com/GhostPack/SharpDPAPI/1.1-installation-and-setup
+[SharpDpapiInstallation](https://deepwiki.com/GhostPack/SharpDPAPI/1.1-installation-and-setup)
