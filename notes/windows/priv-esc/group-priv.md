@@ -1,9 +1,11 @@
 
 >[!NOTE]
 > How to add individual to the group 
-## Group Privileges
+# Group Privileges
+
 - Built-in groups are groups that are shipped with the operating system or get added when active directory domain services role is installed on system to promote a server to a Domain Controller
-#### Event Log Reader
+- 
+## Event Log Reader
 
 ```Powershell
 wevtutil qe Security /rd:true /f:text | Select-String "/user"
@@ -13,8 +15,10 @@ wevtutil qe Security /rd:true /f:text | Select-String "/user"
 ```
 
 
-==need to get more info==
-#### DNSAdmins Group
+>[!WARN]
+> Need to get more info on this
+
+>#### DNSAdmins Group
 
 **Checks whether you are part of the group** 
 ```
