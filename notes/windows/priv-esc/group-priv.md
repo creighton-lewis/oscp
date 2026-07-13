@@ -53,7 +53,10 @@ sc.exe sdshow DNS
 
 
 **Restarting DNS Process** 
-Confirm Key Is Added:LiArrowBigRight: Remove Key :LiArrowBigRight: Start Service Again 
+```mermaid
+flowchart LR
+    A[Confirm key is added] --> B[Remove key] --> C[Start service again ]
+```
 ```
 C:\Windows\System32> reg query \\10.129.43.9\HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters
 
