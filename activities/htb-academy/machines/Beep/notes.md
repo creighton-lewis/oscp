@@ -96,6 +96,14 @@ multiple/dos/2444.sh
 - Several open ports
 - NOt sure what exploit would be the best or if any even exist that work well
 - Looks like webpage
-- Ssl is expired 
+- Ssl is expired
 
+```
+- > enumerate live services -> determine attack path 
+```
+>[!NOTE] the CVE code mentioned can do the following: 
+>issabel-pbx version 4.0.0-6 contains a Broken Access Control vulnerability that manifests as unauthenticated Directory Listing on the web interface. Any remote, unauthenticated attacker >can browse the application's modules directory and directly access sensitive source files, configuration files, and internal application logic without any credentials or authorization.
 
+```
+rpccinfo -U '' -N 10.129.229.183
+```
