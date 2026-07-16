@@ -29,7 +29,7 @@ GET /../../../../../../../../../../../../\WINDOWS\system32\drivers\etc\hosts - s
 ```
 http://10.129.227.77/../../../../../../../../../../../../Users/Nathan/Desktop/Passwords.txt - The real successful one 
 ```
-- apparently the win.ini file itself is just a file, so by trying to add to the directory traveERSAL, WOULD BE LIKE TRYING TO REFERENCE two files at once, which is obviously not possible 
+- apparently the win.ini file itself is just a file, so by trying to add to the directory traversal, would be like trying to reference two files at once, which is obviously not possible 
 - also, the C:\ value is not shown in the directory traversal request
 - know that there are users on the system, not sure what their names are though 
 - is it possible to use remote code execution for this? or not? 
@@ -38,6 +38,9 @@ http://10.129.227.77/../../../../../../../../../../../../Users/Nathan/Desktop/Pa
 
  # Nadine's Password
  used hydra brute forcing 
+ ```
+ hydra -l nadine -P Passwords.txt ssh://ip-address
+```
 - found the password thorugh trial and error, L1k3B1gBut7s@W0rk 
 - what is best way to find the user? could I try to look for .ssh files for the directory traversal?
 ON THE SYTSEM 
