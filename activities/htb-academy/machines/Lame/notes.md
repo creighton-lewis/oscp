@@ -1,4 +1,5 @@
 SMB Port open 
+# Time to solve: less than 1 hour 
 
 ### Open ports
 - Open ports:
@@ -63,4 +64,8 @@ HOP RTT       ADDRESS
 ### More details 
 - smb share /tmp gives us write access
 - searched metasploit for vulnerability information
--  continues to try return address 
+-  continues to try return address
+
+### Flags 
+user.txt 8c5b374292889631f539ecd766b04aef (located in user.txt directory) 
+root.txt (located in root directory) 
