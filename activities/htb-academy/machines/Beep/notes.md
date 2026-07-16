@@ -107,4 +107,9 @@ multiple/dos/2444.sh
 ```
 rpccinfo -U '' -N 10.129.229.183 #denied 
 ```
-telnet ip 110 
+checklist 
+x - netcat connect to pop3 
+x - necat connect to imap3 
+x - netcat connect to ssh 
+x - netcat connect to mysql 
+x - netcat connect to upnotifyp 
