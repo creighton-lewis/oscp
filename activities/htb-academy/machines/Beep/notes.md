@@ -94,9 +94,9 @@ multiple/dos/2444.sh
 
 # Notes 
 - Several open ports
-- NOt sure what exploit would be the best or if any even exist that work well
+- Not sure what exploit would be the best or if any even exist that work well
 - Looks like webpage
-- Ssl is expired
+- Ssl is expired, consistent issue 
 
 ```
 - > enumerate live services -> determine attack path 
@@ -107,9 +107,4 @@ multiple/dos/2444.sh
 ```
 rpccinfo -U '' -N 10.129.229.183 #denied 
 ```
-checklist 
-x - netcat connect to pop3 
-x - necat connect to imap3 
-x - netcat connect to ssh 
-x - netcat connect to mysql 
-x - netcat connect to upnotifyp 
+- Should have visited port 443 in browser with http, which gave crucial hint 
