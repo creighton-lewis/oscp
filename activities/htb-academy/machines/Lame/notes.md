@@ -60,4 +60,7 @@ HOP RTT       ADDRESS
 1   85.46 ms  10.10.16.1
 2   130.69 ms 10.129.30.74
 ```
-### 
+### More details 
+- smb share /tmp gives us write access
+- searched metasploit for vulnerability information
+-  continues to try return address 
