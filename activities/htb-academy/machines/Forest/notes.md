@@ -96,7 +96,12 @@ Nmap done: 1 IP address (1 host up) scanned in 2.18 seconds
 # Notes 
 - running windows server 2016
 - may be vulnerable to ms-10?
-- unable to connect it sems like to http website; not public facing 
+- unable to connect it sems like to http website; not public facing
+- LDAp can be used to find crucial information about a domain without authentication
+- Guided activity says that ldap allows for anonymous authentication can provide valuable information about the machine. Need to take notes on that was not covered or I just didn't take notes on it
+```
+ldapsearch -x -H ldap://10.129.95.210 -b "dc=htb,dc=local" "(objectClass=person)" #if domain is htb.local, you split it in two so that one dc is equal to the first part and hte other is equal to the second part 
+```
 # Exploit Information & Links 
 Cntrl+D to stop recording
 ```
