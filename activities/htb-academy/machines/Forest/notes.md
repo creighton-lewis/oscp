@@ -63,6 +63,7 @@ HOP RTT      ADDRESS
 ```
 
 ## Nuclei-scan 
+- Was unsuccessful, twice 
 ## Rustscan 
 ```
 53/tcp    open  domain           syn-ack
@@ -150,4 +151,7 @@ Affected Products 🎯
   → +5 more...─────────────────────────────────────────────────────────────────
 ```
 # Checklist 
+- Check for public facing ports
+http://10.129.95.210:5985/ # unresponsive
+http://10.129.95.210:53 # unresponsive 
 # Time to completion
