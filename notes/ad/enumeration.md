@@ -3,7 +3,11 @@
 ```
  nmap -n -sV --script "ldap* and not brute" -p 389 <DC IP>`
 ```
-
+```
+ldapsearch -x -H ldap://10.129.95.210 \
+  -b "dc=htb,dc=local" \
+  "(objectClass=*)"
+```
 # Internal 
 >[!NOTE]
 > Import ActiveDirectory
