@@ -2,6 +2,7 @@
 ##  Nmap Scan 
 ## Nuclei-scan 
 ## Rustscan 
+```
 53/tcp    open  domain           syn-ack
 88/tcp    open  kerberos-sec     syn-ack
 135/tcp   open  msrpc            syn-ack
@@ -28,7 +29,7 @@
 
 Read data files from: /home/linuxbrew/.linuxbrew/Cellar/nmap/7.99/bin/../share/nmap
 Nmap done: 1 IP address (1 host up) scanned in 2.18 seconds
-
+```
 # Notes 
 # Exploit Information & Links 
 # Checklist 
