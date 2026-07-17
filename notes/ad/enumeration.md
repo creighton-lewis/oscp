@@ -45,6 +45,7 @@ $command = "Write-Host 'My voice is my passport, verify me.'" $bytes = [System.T
 ### Powerview
 ```
 Import-Module ./PowerView.ps1
+Get-NetDomain # test 
 ```
 
 **Basic Domain Information**
@@ -67,6 +68,9 @@ Get-NetGPO
 Get-NetOU
 Find-InterestingDomainAcl
 Find-ObjectAcl -ResolveGUIDs -Identity "HTB.LOCAL" | Where-Object { $_.ActiveDirectoryRights -match "WriteDACL" } # this can be any privilege
+Find-ObjectAcl -ResolveGUIDs -Identity "HTB.LOCAL" | Where-Object { $_.ActiveDirectoryRights -match "WriteDACL" } # omit domain if it is current domain 
+
+
 ```
 **Users** 
 ```
