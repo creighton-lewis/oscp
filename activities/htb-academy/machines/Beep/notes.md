@@ -91,7 +91,35 @@ searchsploit openssh 4.3
 SSH-2.0-OpenSSH_4.3
 multiple/dos/2444.sh
 ```
+## Ffuf scan 
+```
+________________________________________________
 
+ :: Method           : GET
+ :: URL              : https://10.129.229.183/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+images                  [Status: 301, Size: 318, Words: 20, Lines: 10, Duration: 111ms]
+themes                  [Status: 301, Size: 318, Words: 20, Lines: 10, Duration: 83ms]
+admin                   [Status: 301, Size: 317, Words: 20, Lines: 10, Duration: 81ms]
+modules                 [Status: 301, Size: 319, Words: 20, Lines: 10, Duration: 85ms]
+help                    [Status: 301, Size: 316, Words: 20, Lines: 10, Duration: 141ms]
+mail                    [Status: 301, Size: 316, Words: 20, Lines: 10, Duration: 62ms]
+lang                    [Status: 301, Size: 316, Words: 20, Lines: 10, Duration: 59ms]
+static                  [Status: 301, Size: 318, Words: 20, Lines: 10, Duration: 104ms]
+libs                    [Status: 301, Size: 316, Words: 20, Lines: 10, Duration: 163ms]
+var                     [Status: 301, Size: 315, Words: 20, Lines: 10, Duration: 153ms]
+panel                   [Status: 301, Size: 317, Words: 20, Lines: 10, Duration: 132ms]
+configs                 [Status: 301, Size: 319, Words: 20, Lines: 10, Duration: 63ms]
+recordings              [Status: 301, Size: 322, Words: 20, Lines: 10, Duration: 149ms]
+vtigercrm               [Status: 301, Size: 321, Words: 20, Lines: 10, Duration: 226ms]
+```
 # Notes 
 - Several open ports
 - Not sure what exploit would be the best or if any even exist that work well
