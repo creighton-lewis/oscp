@@ -110,10 +110,16 @@ oscp-prep/authority »
    - Can I connect?
    - No, access denied
    - Not smbV1 version
-   - nxc smb $ip -u admin -p pass # guest 
+   - nxc smb $ip -u admin -p pass # guest
+   - nxc smb 10.129.30.252 -u '' -p ''
+
 - LDAP
    - Can I connect?
-   - ldapwhoami -x -H ldap://target.com # unsuccessful 
+   - ldapwhoami -x -H ldap://target.com # unsuccessful
+   - ldapsearch -x -H ldap://target.com -b "dc=example,dc=com" # unsuccessful 
+   - ldapsearch -x -H ldaps://$ip:636 -D "cn=admin,dc=authority,dc=htb" -w password -b "dc=authority,dc=htb" # unsuccessful
+   - ldapsearch -x -H ldap://$ip -b "dc=authority,dc=htb"  #unsucessful 
+   - ldapsearch -x -H ldap://$ip -b "" -s base "(objectclass=*)" # worked
 
 
   
