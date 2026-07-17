@@ -147,7 +147,7 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
   - Reveals exposed internet information services information
  
 - RPCClient
-   - Connection is possible
+   - Connection is possible, but without authnetication, use is extremely limited 
   ```
    - rpcclient -U "" -N $ip
    ```
