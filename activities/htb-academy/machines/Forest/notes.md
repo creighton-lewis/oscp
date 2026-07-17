@@ -1,5 +1,66 @@
 # Scans
 ##  Nmap Scan 
+53/tcp   open  domain       Simple DNS Plus
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2026-07-17 15:49:51Z)
+135/tcp  open  msrpc        Microsoft Windows RPC
+139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+5985/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=7/17%OT=53%CT=1%CU=37523%PV=Y%DS=2%DC=T%G=Y%TM=6A5A4DB
+OS:6%P=aarch64-unknown-linux-gnu)SEQ(TI=RI%TS=A)SEQ(SP=101%GCD=1%ISR=100%TI
+OS:=I%CI=RD%II=I%SS=S%TS=A)SEQ(SP=102%GCD=1%ISR=10D%TI=I%CI=RD%TS=A)SEQ(SP=
+OS:107%GCD=1%ISR=10C%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=107%GCD=1%ISR=10E%TI=I
+OS:%CI=I%II=I%SS=S%TS=A)OPS(O1=M542NW8ST11%O2=M542NW8ST11%O3=M542NW8NNT11%O
+OS:4=M542NW8ST11%O5=M542NW8ST11%O6=M542ST11)WIN(W1=2000%W2=2000%W3=2000%W4=
+OS:2000%W5=2000%W6=2000)ECN(R=N)ECN(R=Y%DF=Y%T=80%W=2000%O=M542NW8NNS%CC=Y%
+OS:Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T2(R=Y%DF=Y%T=80%W=0%S=
+OS:Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=
+OS:Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=A
+OS:R%O=%RD=0%Q=)T6(R=N)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=N)T
+OS:7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=N)U1(R=Y%DF=N%T=80%IPL
+OS:=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+|_clock-skew: mean: 2h26m35s, deviation: 4h02m30s, median: 6m34s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2026-07-17T08:50:11-07:00
+| smb2-time: 
+|   date: 2026-07-17T15:50:12
+|_  start_date: 2026-07-17T15:47:54
+
+TRACEROUTE (using port 21/tcp)
+HOP RTT      ADDRESS
+1   72.17 ms 10.10.16.1
+2   72.19 ms 10.129.95.210
+
+
 ## Nuclei-scan 
 ## Rustscan 
 ```
