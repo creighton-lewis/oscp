@@ -142,6 +142,15 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
    - ldapsearch -x -H ldaps://$ip:636 -D "cn=admin,dc=authority,dc=htb" -w password -b "dc=authority,dc=htb" # unsuccessful
    - ldapsearch -x -H ldap://$ip -b "dc=authority,dc=htb"  #unsucessful 
    - ldapsearch -x -H ldap://$ip -b "" -s base "(objectclass=*)" # worked
+ 
+- Port 80
+  - Reveals exposed internet information services information
+ 
+- RPCClient
+   - Connection is possible
+  ```
+   - rpcclient -U "" -N $ip
+   ```
 
 
   
