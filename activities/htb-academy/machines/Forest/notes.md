@@ -93,6 +93,61 @@ Read data files from: /home/linuxbrew/.linuxbrew/Cellar/nmap/7.99/bin/../share/n
 Nmap done: 1 IP address (1 host up) scanned in 2.18 seconds
 ```
 # Notes 
+- running windows server 2016
+- may be vulnerable to ms-10?
+- unable to connect it sems like to http website; not public facing 
 # Exploit Information & Links 
+Cntrl+D to stop recording
+```
+vulnx search windows server 2016 smb
+```
+```
+vulnx search windows server 2016 --poc
+```
+## CVE-2017-0147 
+```
+CVE-2017-0147] High - Microsoft Windows SMB - Information Disclosure
+  ↳ Priority: IMMEDIATE | EXPLOITS AVAILABLE | Vuln Age: 3409d
+  ↳ CVSS: 7.5 | EPSS: 0.9969 (HIGH) | KEV: ✔ (CISA, VULNCHECK)
+  ↳ Patch: ✔ | POCs: 9 | Template: ✘ | HackerOne: ✘
+
+Summary 📝
+  ↳ Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, Windows 10 versions, and Windows Server 2016 contain an information disclosure caused by crafted SMBv1 packets, letting remote attackers retrieve sensitive information from process memory, exploit requires network access.
+
+Risk ⚠️
+  ↳ Remote attackers can retrieve sensitive information from process memory, potentially leading to further exploits or data breaches.
+
+Remediation 🔧
+  ↳ Disable SMBv1 or update to a version with the fix, and consider applying security patches provided by Microsoft.
+
+POCs 🔍
+  → http://packetstormsecurity.com/files/156196/SMB-DOUBLEPULSAR-Remote-Code-Execution.html
+        (nvd)
+  → https://www.exploit-db.com/exploits/41891/ (nvd)
+  → https://github.com/RobertoLeonFR-ES/Exploit-Win32.CVE-2017-0147.A (gh-nomi-sec)
+  → http://packetstormsecurity.com/files/154690/DOUBLEPULSAR-Payload-Execution-Neutralization.html
+        (nvd)
+  → https://www.exploit-db.com/exploits/41987/ (nvd)
+  → +4 more...
+
+References 📚
+  → https://www.ivanti.com/resources/v/doc/pr-survey-report/ransomware-quarterly-indexreport_q2-q3
+        (vulncheck)
+  → http://packetstormsecurity.com/files/154690/DOUBLEPULSAR-Payload-Execution-Neutralization.html
+        (nvd)
+  → https://cert-portal.siemens.com/productcert/pdf/ssa-966341.pdf (nvd)
+  → https://www.enisa.europa.eu/sites/default/files/2025-10/ENISA%20Threat%20Landscape%202025.pdf
+        (vulncheck)
+  → https://www.cyfirma.com/research/apt-profile-mission2025/ (vulncheck)
+  → +15 more...
+
+Affected Products 🎯
+  → windows_7 (microsoft)
+  → windows_server_2012 (microsoft)
+  → acuson_x700_firmware (siemens)
+  → syngo_sc2000_firmware (siemens)
+  → versant_kpcr_molecular_system_firmware (siemens)
+  → +5 more...─────────────────────────────────────────────────────────────────
+```
 # Checklist 
 # Time to completion
