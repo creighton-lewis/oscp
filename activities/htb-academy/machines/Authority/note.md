@@ -73,6 +73,29 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 152.01 seconds
 oscp-prep/authority » 
 ```
+```
+oscp-prep/authority » sudo nmap -sV -sC -p 445 $ip --script=vuln                         
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-17 23:44 UTC
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.129.30.252
+Host is up (0.13s latency).
+
+PORT    STATE SERVICE       VERSION
+445/tcp open  microsoft-ds?
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
+```
 ## Nuclei-scan 
 ```
 [waf-detect:modsecurity] [http] [info] http://10.129.30.252
@@ -101,7 +124,6 @@ oscp-prep/authority »
 [http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://10.129.30.252
 [tech-detect:ms-iis] [http] [info] http://10.129.30.252
 ```
-
 # Observations 
 - Obviously a windows machine
 - Several ports open
