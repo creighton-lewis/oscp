@@ -3,3 +3,7 @@ ldapsearch -x -H ldap://target.com \
   -b "dc=example,dc=com" \
   "(&(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))" \
   sAMAccountName
+
+
+
+ldapsearch -Q -Y GSSAPI -H ldap://10.129.95.210 -b 'DC=htb,local' '(objectClass=user)'
