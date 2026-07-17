@@ -102,6 +102,21 @@ Nmap done: 1 IP address (1 host up) scanned in 2.18 seconds
 ```
 ldapsearch -x -H ldap://10.129.95.210 -b "dc=htb,dc=local" "(objectClass=person)" #if domain is htb.local, you split it in two so that one dc is equal to the first part and hte other is equal to the second part 
 ```
+- Attempted to use windsearch to do additional ldap enumeration but was unsuccessful because the python modules were conflicting.
+  
+- Ended up finding the username and password for one user by cracking the krbtgt hash by using the GetUserSPN.py module of impacket
+  
+- Connected by using those credentials for evil-winrm
+
+- Attempted to use SharpHound.exe but apparently the .NET version was too outdated for SharpHound to work
+```
+.\SharpHound.exe
+2026-07-17T14:06:55.0259624-07:00|INFORMATION|This version of SharpHound is compatible with the 5.0.0 Release of BloodHound
+2026-07-17T14:06:55.0418973-07:00|INFORMATION|SharpHound Version: 2.13.0.0
+2026-07-17T14:06:55.0418973-07:00|INFORMATION|SharpHound Common Version: 4.6.2.0
+2026-07-17T14:06:55.0418973-07:00|ERROR|The .Net Runtime is not compatible with SharpHound. Please update to .Net 4.7.2.
+```
+- Also attempted to use the bloodhound module of nxc ldap 
 # Exploit Information & Links 
 Cntrl+D to stop recording
 ```
@@ -164,3 +179,5 @@ http://10.129.95.210:53 # unresponsive
 - Needed write up?
 Yes, for ldap enumeration and privilege escalation
 f5985675a26f753af957d6aa05022e60
+
+
