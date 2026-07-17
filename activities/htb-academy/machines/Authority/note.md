@@ -1,17 +1,6 @@
 # Scans 
 ## Rustscan 
-Open 10.129.30.252:53
-Open 10.129.30.252:139
-Open 10.129.30.252:389
-Open 10.129.30.252:445
-Open 10.129.30.252:464
-Open 10.129.30.252:593
-Open 10.129.30.252:636
-Open 10.129.30.252:3268
-Open 10.129.30.252:3269
-Open 10.129.30.252:5985
-Open 10.129.30.252:8443
-Open 10.129.30.252:9389
+
 ## Nmap Scan 
 ```
 PORT     STATE SERVICE       VERSION
@@ -85,6 +74,34 @@ Nmap done: 1 IP address (1 host up) scanned in 152.01 seconds
 oscp-prep/authority » 
 ```
 ## Nuclei-scan 
+```
+[waf-detect:modsecurity] [http] [info] http://10.129.30.252
+[ldap-metadata] [javascript] [info] 10.129.30.252:389 ["DomainControllerFunctionality: 7","BaseDN: dc=389","DnsHostName: authority.authority.htb","DefaultNamingContext: DC=authority,DC=htb","DomainFunctionality: 7","ForestFunctionality: 7"]
+[ldap-anonymous-login-detect] [javascript] [medium] 10.129.30.252
+[smb-enum] [javascript] [info] 10.129.30.252:445 ["DNSComputerNamen: authority.authority.htb","DNSComputerName: authority.authority.htb","ForestName: authority.htb","OSVersion: 10.0.17763","NetBIOSComputerName: AUTHORITY","NetBIOSDomainName: HTB"]
+[smb-enum-domains] [javascript] [info] 10.129.30.252:445 ["DomainName: authority.htb"]
+[smb-os-detect] [javascript] [info] 10.129.30.252:445 ["Windows Server 2019, Version 1809"]
+[smb-version-detect:smb-version] [javascript] [info] 10.129.30.252:445 ["SMB 2.1"]
+[smb2-capabilities] [javascript] [info] 10.129.30.252:445 ["["DFSSupport","LargeMTU","Leasing"]"]
+[smb2-server-time] [javascript] [info] 10.129.30.252:445 ["SystemTime: 2026-07-18T03:16:45.000Z ServerStartTime: 2009-04-22T19:24:48.000Z"]
+[smb-anonymous-access] [javascript] [high] 10.129.30.252:445
+[smb-shares] [javascript] [low] 10.129.30.252:445 ["[ADMIN$ C$ Department Shares Development IPC$ NETLOGON SYSVOL]"] [FQDN="10.129.30.252",Host="10.129.30.252",Hostname="10.129.30.252:445",Port="445",password="",username="admin"]
+[options-method] [http] [info] http://10.129.30.252 ["OPTIONS, TRACE, GET, HEAD, POST"]
+[default-windows-server-page] [http] [info] http://10.129.30.252
+[microsoft-iis-version] [http] [info] http://10.129.30.252 ["Microsoft-IIS/10.0"]
+[http-missing-security-headers:strict-transport-security] [http] [info] http://10.129.30.252
+[http-missing-security-headers:permissions-policy] [http] [info] http://10.129.30.252
+[http-missing-security-headers:x-frame-options] [http] [info] http://10.129.30.252
+[http-missing-security-headers:x-content-type-options] [http] [info] http://10.129.30.252
+[http-missing-security-headers:referrer-policy] [http] [info] http://10.129.30.252
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://10.129.30.252
+[http-missing-security-headers:content-security-policy] [http] [info] http://10.129.30.252
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://10.129.30.252
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://10.129.30.252
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://10.129.30.252
+[tech-detect:ms-iis] [http] [info] http://10.129.30.252
+```
+
 # Observations 
 - Obviously a windows machine
 - Several ports open
@@ -93,6 +110,10 @@ oscp-prep/authority »
    - Can I connect?
    - No, access denied
    - Not smbV1 version
- 
+   - nxc smb $ip -u admin -p pass # guest 
 - LDAP
+   - Can I connect?
+   - ldapwhoami -x -H ldap://target.com # unsuccessful 
+
+
   
