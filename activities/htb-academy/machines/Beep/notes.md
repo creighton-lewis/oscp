@@ -121,6 +121,7 @@ recordings              [Status: 301, Size: 322, Words: 20, Lines: 10, Duration:
 vtigercrm               [Status: 301, Size: 321, Words: 20, Lines: 10, Duration: 226ms]
 ```
 # Notes 
+## First glance
 - Several open ports
 - Not sure what exploit would be the best or if any even exist that work well
 - Looks like webpage
@@ -132,6 +133,9 @@ vtigercrm               [Status: 301, Size: 321, Words: 20, Lines: 10, Duration:
 >[!NOTE] the CVE code mentioned can do the following: 
 >issabel-pbx version 4.0.0-6 contains a Broken Access Control vulnerability that manifests as unauthenticated Directory Listing on the web interface. Any remote, unauthenticated attacker >can browse the application's modules directory and directly access sensitive source files, configuration files, and internal application logic without any credentials or authorization.
 
+>[!NOTE] searching metapsloit, we are given the exploit
+> 37637.pl, which offers lfi and rce 
+
 >[!NOTE]
 >Exploitation
 >Note - It might be possible that the webpage cannot be loaded due to Firefox and other browsers
@@ -141,3 +145,6 @@ vtigercrm               [Status: 301, Size: 321, Words: 20, Lines: 10, Duration:
 >1. Open a new tab in Firefox.Enter "about:config" in the address bar and hit Enter/Return.
 >2. In the search box located above the list, enter "security.tls.version.min".
 >3. Locate the preference with the name "security.tls.version.min" and modify its value to ‘1’.
+
+## Payload Selection 
+https://10.129.229.183/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&whoami
