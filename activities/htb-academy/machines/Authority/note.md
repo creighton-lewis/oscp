@@ -180,9 +180,19 @@ Clicking on configuration mode reveals that a user has authentticated successful
 >Saw this
 >The PWM (Password Management for LDAP) does not have a default password; it requires you to set a configuration password during the initial setup. You must create a strong password for configuration access when you first configure PWM.
 
-- Reviewed credentials for smb from nuclei-scan
-- Turns out guest users can download files when using -u admin and -p '' as their credentials
-- Went to PWM file and saw that the default admin login name is root and the admin password is password
-- Saw that PWM templates, the pwm_admin_password is !vault
-- ldap_admin_password: !vault 
-- 
+Credential Combinations That Were Tried 
+```
+root:!vault 
+root:password
+admin:password 
+admin:!vault
+```
+Configuration Password Values Tried 
+password 
+!vault 
+sunrise
+
+- Need to log into pwm but don't know how
+- Have had several authentication failures but not sure what to do about it
+- Have read access to important information via smb but unsure how to exploit/use since ca't connect to ldap 
+
