@@ -134,6 +134,9 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
    - Not smbV1 version
    - nxc smb $ip -u admin -p pass # guest
    - nxc smb 10.129.30.252 -u '' -p ''
+   - nxc smb $ip -u admin -p "" --shares # reveals actual shares, thanks to nuclei scan i found out this was possible
+   - #spidering shares is possible! what the fuck 
+   - 
 
 - LDAP
    - Can I connect?
