@@ -163,4 +163,7 @@ Clicking on configuration mode reveals that a user has authentticated successful
 - Host seems down, If it is up, but blocking probes, try -Pn
 - Identity was svc_pwm DC=htb,DC=corp
 - had been trying to authenticate to ldap search by using the wrong thang
-- Looks like authentication through no identity has been done with address 127.0.0.1 
+- Looks like authentication through no identity has been done with address 127.0.0.1
+>![!NOTE]
+> Saw this
+> The PWM (Password Management for LDAP) does not have a default password; it requires you to set a configuration password during the initial setup. You must create a strong password for configuration access when you first configure PWM.
