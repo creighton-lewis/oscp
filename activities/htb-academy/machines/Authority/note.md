@@ -159,3 +159,8 @@ PWM is currently in configuration mode. This mode allows updating the configurat
 
 After you have verified the LDAP directory settings, use the Configuration Manager to restrict the configuration to prevent unauthorized changes. After restricting, the configuration can still be changed but will require LDAP directory authentication first.
 ```
+Clicking on configuration mode reveals that a user has authentticated successfully form the address 10.129.204.183. 
+- Host seems down, If it is up, but blocking probes, try -Pn
+- Identity was svc_pwm DC=htb,DC=corp
+- had been trying to authenticate to ldap search by using the wrong thang
+- Looks like authentication through no identity has been done with address 127.0.0.1 
