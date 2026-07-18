@@ -197,6 +197,8 @@ sunrise
 - Have read access to important information via smb but unsure how to exploit/use since ca't connect to ldap
 
 --correct format for ansible hashes 
+
+### Admin-Pass
 ```
 $ANSIBLE_VAULT;1.1;AES256
 31356338343963323063373435363261323563393235633365356134616261666433393263373736
@@ -205,6 +207,10 @@ $ANSIBLE_VAULT;1.1;AES256
 3930356637306461350a316466663037303037653761323565343338653934646533663365363035
 6531
 ```
-
 admin-pass: !@#$%^&*
+admin-pass: !@#$%^&*
+### Admin-Login 
+
+
+
 
