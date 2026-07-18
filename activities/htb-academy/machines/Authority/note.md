@@ -217,9 +217,13 @@ admin-pass: !@#$%^&*
 flowchart LR
     A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert into crackable format with ansibl2john ] --> D[ Use the password to decrypt, officially using ansible decrypt]
 ```
+```
 !@#$%^&*
-pWm_@dm!N_!23%
+
+pWm_@dm!N_!23% # for some reason, actual password does not contain the %, which was throwing me off 
+
 svc_pwm
+```
 
 
 
