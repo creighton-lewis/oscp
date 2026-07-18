@@ -18,3 +18,38 @@ Service Info: Host: titanic.htb
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done a
 ```
+# Obervartions 
+- Web application
+- When someone submits a form, they werceive information about their stay
+- The phone number parametr is not checked, as you can add a phone number with more than 10 characters and it is still executed
+- vulnx search
+```
+
+- [CVE-2022-22719] High - Apache HTTP Server - Denial of Service
+  ↳ Priority: MEDIUM | No exploits | Vuln Age: 1585d
+  ↳ CVSS: 7.5 | EPSS: 0.6980 (MED) | KEV: ✘
+  ↳ Exposure: ~14276.2K | Vendors: apple, apache +3 | Products: mac_os_x, macos +4
+  ↳ Patch: ✔ | POCs: ✘ | Nuclei Template: ✘ | HackerOne: ✔
+─────────────────────────────────────────────────────────────────────────
+
+[CVE-2022-22720] Critical - Apache HTTP Server - HTTP Request Smuggling
+  ↳ Priority: HIGH | EXPLOITS AVAILABLE | Vuln Age: 1587d
+  ↳ CVSS: 9.8 | EPSS: 0.2819 | KEV: ✘
+  ↳ Exposure: ~14279.7K | Vendors: oracle, apple +3 | Products: zfs_storage_appli..., mac_os_x +5
+  ↳ Patch: ✔ | POCs: 1 | Nuclei Template: ✘ | HackerOne: ✔
+─────────────────────────────────────────────────────────────────────────
+
+[CVE-2022-22721] Critical - Apache HTTP Server - Integer Overflow
+  ↳ Priority: MEDIUM | No exploits | Vuln Age: 1587d
+  ↳ CVSS: 9.1 | EPSS: 0.4186 (MED) | KEV: ✘
+  ↳ Exposure: ~14279.7K | Vendors: oracle, apple +3 | Products: enterprise_manage..., http_server +5
+  ↳ Patch: ✔ | POCs: ✘ | Nuclei Template: ✘ | HackerOne: ✔
+─────────────────────────────────────────────────────────────────────────
+
+[CVE-2022-23943] Critical - Apache HTTP Server - Out of Bounds Read/Write
+  ↳ Priority: URGENT | No exploits | Vuln Age: 1587d
+  ↳ CVSS: 9.8 | EPSS: 0.5040 (MED) | KEV: ✘
+  ↳ Exposure: ~14279.7K | Vendors: debian, oracle +2 | Products: debian_linux, http_server +2
+  ↳ Patch: ✔ | POCs: ✘ | Nuclei Template: ✘ | HackerOne: ✔
+```
+
