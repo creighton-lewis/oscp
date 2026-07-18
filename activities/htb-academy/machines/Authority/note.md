@@ -209,9 +209,14 @@ $ANSIBLE_VAULT;1.1;AES256
 ```
 ```
 admin-pass: !@#$%^&*
-admin-pass: !@#$%^&*
+admin-pass: !@#$%^&* 
 ```
 ### Admin-Login 
+
+```mermaid
+flowchart LR
+    A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert ansible hashes into things that are crackable with tools like john the ripper] --> D [ Use the password to decrypt, officially using ansible decrypt]
+```
 
 
 
