@@ -66,7 +66,11 @@ smbmap -H ip
 *Searching Shares*
 https://github.com/blacklanternsecurity/MANSPIDER
 ```bash
-nxc smb 10.129.234.121 -u mendres -p 'Inlanefreight2025!' --spider IT --content --pattern "passw"
+nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "passw"
+nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "pdf"
+nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "key"
+
+
 ```
 
 *Downloading all files 
