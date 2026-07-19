@@ -70,7 +70,9 @@ nxc smb $ip  -u $uname -p $pass --spider IT --content --pattern "passw"
 nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "pdf"
 nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "key"
 
+```
 
+nxc smb 172.16.251.152 -u user -p pass --get-file \\Windows\\Temp\\whoami.txt /tmp/whoami.txt
 ```
 
 *Downloading all files 
