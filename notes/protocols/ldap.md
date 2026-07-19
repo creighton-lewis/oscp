@@ -10,3 +10,7 @@ ldapsearch -x -H ldap://target.com \
 ```
 ldapsearch -X -H ldap://ip -b "dc=authority,dc=htb"
 ```
+
+```
+nxc ldap 10.129.232.88 -u $uname -p $pass --bloodhound --dns-server $ip
+```
