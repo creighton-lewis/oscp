@@ -46,7 +46,7 @@ sudo nmap --script smb-enum-domains.nse,smb-enum-groups.nse,smb-enum-processes.n
 ```bash
 sudo nmap -sV -sC -A ip -p 445 
 
-nxc smb ip -u guest - p '' --shares 
+nxc smb ip -u admin - p '' --shares 
 
 smbclient -N -L //ip
 
