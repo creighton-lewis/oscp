@@ -75,7 +75,7 @@ nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "key"
 
 *Downloading all files 
 ```bash
-nxc smb $ip-u $uname -p $pass -M spider_plus -o DOWNLOAD_FLAG=True
+nxc smb $ip $uname -p $pass -M spider_plus -o DOWNLOAD_FLAG=True
 ```
 
 ```bash
