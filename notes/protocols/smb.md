@@ -71,12 +71,20 @@ nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "pdf"
 nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "key"
 
 ```
+*Downloading Specific Files*
 ```
 nxc smb $ip -u $uname -p $pass --get-file --share file-name new-name 
 ```
 ```
 nxc smb $ip -u $uname -p $pass --share IT --get-file Upgrade_Notice.pdf notice.pdf
 ```
+*Upload Specific File* 
+```
+nxc smb $ip -u $uname -p $pass \
+    --share IT \
+    --put-file xd.library-ms "xd.library-ms"
+```
+
 
 *Downloading all files 
 ```bash
