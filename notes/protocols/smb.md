@@ -66,9 +66,9 @@ smbmap -H ip
 *Searching Shares*
 https://github.com/blacklanternsecurity/MANSPIDER
 ```bash
-nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "passw"
-nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "pdf"
-nxc smb 10.129.234.121 -u $uname -p $pass --spider IT --content --pattern "key"
+nxc smb $ip  -u $uname -p $pass --spider IT --content --pattern "passw"
+nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "pdf"
+nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "key"
 
 
 ```
