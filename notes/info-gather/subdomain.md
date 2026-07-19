@@ -12,5 +12,7 @@ sudo mv kerbrute /usr/local/bin
 ```
 subfinder -d website.com -o site.com 
 ```
-
+```
+ffuf -H "Host: FUZZ.titanic.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u http://10.129.31.123
+```
 # Exploitation 
