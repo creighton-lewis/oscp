@@ -78,3 +78,7 @@ ssh-keygen -f key
 ssh root@10.10.10.10 -i key 
 
 ```
+```
+ssh usera@yourserver bash --noprofile
+```
+
