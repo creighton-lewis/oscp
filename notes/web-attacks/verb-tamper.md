@@ -8,4 +8,5 @@
   - Delete
   - Trace
   - Connect
- To bypass web application constraints
+
+To bypass web application constraints
