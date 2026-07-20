@@ -1,4 +1,5 @@
-# Enumeration 
+# Subdomain
+### Enumeration 
 ## Kerbrute 
 - Download
 - Rename
@@ -15,4 +16,13 @@ subfinder -d website.com -o site.com
 ```
 ffuf -H "Host: FUZZ.titanic.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u http://10.129.31.123
 ```
-# Exploitation 
+### Exploitation 
+# Directories 
+```
+
+ffuf -w usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
+ffuf -w usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt
+ffuf -w usr/share/seclists/Discovery/Web-Content/small-medium-directories-lowercase.txt
+
+```
+
