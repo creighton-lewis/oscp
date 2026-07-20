@@ -14,7 +14,7 @@ impacket-smbserver -smb2support share share
 
 ```shell
 mkdir share 
-impacket-smbserver -smb2support share share -u username -p password
+impacket-smbserver -smb2support share share -u username -password pass
 # Adds credentials 
 ```
 
