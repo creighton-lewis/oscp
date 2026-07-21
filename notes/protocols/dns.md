@@ -18,6 +18,10 @@ fierce --domain <DOMAIN> --dns <DNS_IP>
 dnsrecon -t std -d hackviser.com -D /usr/share/dnsrecon/namelist.txt
 
 maltego
+
+dig @$ip -x $ip
+
+dig @$ip  axfr trick.thb 
 ```
 
 # Exploitation 
